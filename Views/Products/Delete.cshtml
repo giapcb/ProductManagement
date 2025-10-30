@@ -1,0 +1,35 @@
+@model ProductManagement.Models.Product
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure to delete this?</h3>
+
+<div class="alert alert-danger shadow-sm">
+    <strong>Warning:</strong> Are you sure you want to delete this product?
+</div>
+
+<div class="card shadow-sm p-4 bg-light">
+    <dl class="row mb-0">
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">@Model.Name</dd>
+
+        <dt class="col-sm-3">Price</dt>
+        <dd class="col-sm-9 text-success fw-semibold">@Model.Price.ToString("N0") ₫</dd>
+
+        <dt class="col-sm-3">Stock</dt>
+        <dd class="col-sm-9">@Model.Stock</dd>
+    </dl>
+</div>
+
+<form asp-action="Delete" method="post" class="mt-4 d-flex justify-content-between">
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Cancel
+    </a>
+    <button type="submit" class="btn btn-danger">
+        <i class="bi bi-trash"></i> Confirm Delete
+    </button>
+</form>
+

@@ -1,0 +1,37 @@
+@model ProductManagement.Models.Product
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="card shadow-sm p-4 bg-light">
+    <dl class="row mb-0">
+        <dt class="col-sm-3">Product ID</dt>
+        <dd class="col-sm-9">@Model.Id</dd>
+
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">@Model.Name</dd>
+
+        <dt class="col-sm-3">Price</dt>
+        <dd class="col-sm-9 text-success fw-semibold">@Model.Price.ToString("N0") ₫</dd>
+
+        <dt class="col-sm-3">Stock</dt>
+        <dd class="col-sm-9">@Model.Stock</dd>
+
+        <dt class="col-sm-3">Description</dt>
+        <dd class="col-sm-9">@Model.Description</dd>
+    </dl>
+</div>
+
+<div class="mt-4 d-flex justify-content-between">
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Back to List
+    </a>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info text-white">
+        <i class="bi bi-pencil-square"></i> Edit
+    </a>
+</div>
+
+
+<a asp-action="Index" class="btn btn-secondary">Back</a>
